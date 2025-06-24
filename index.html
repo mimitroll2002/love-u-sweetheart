@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Un regalo especial</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      background: linear-gradient(45deg, #ff3366, #ff6699);
+      border: none;
+      padding: 15px 40px;
+      color: white;
+      font-size: 1.3rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff3366;
+      transition: transform 0.25s ease;
+      margin-top: 30px;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    #message {
+      font-size: 1.5rem;
+      max-width: 480px;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      margin-bottom: 30px;
+    }
+    #message.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="message"></div>
+  <button id="revealButton">Haz click para descubrir</button>
+
+  <script>
+    const messageDiv = document.getElementById('message');
+    const button = document.getElementById('revealButton');
+    const songUrl = "https://www.youtube.com/watch?v=jzyLDr5fiI8";
+
+    button.addEventListener('click', () => {
+      messageDiv.textContent = "Creo que estoy enamorada de vos... Happy b-day, my sweetheart";
+      messageDiv.classList.add('visible');
+
+      setTimeout(() => {
+        window.open(songUrl, '_blank');
+      }, 3500);
+    });
+  </script>
+</body>
+</html>
